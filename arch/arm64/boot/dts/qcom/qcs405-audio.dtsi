@@ -28,7 +28,6 @@
 		reg-names = "avtimer_lsb_addr", "avtimer_msb_addr";
 		qcom,clk-div = <192>;
 		qcom,clk-mult = <10>;
-		qcom,cnss-avtimer = <1>;
 	};
 
 	audio_apr: qcom,msm-audio-apr {
@@ -57,10 +56,6 @@
 		status = "okay";
 		compatible = "explore,ep92a6";
 		reg = <0x64>;
-		interrupt-parent = <&tlmm>;
-		interrupts = <107 IRQ_TYPE_EDGE_FALLING>,
-			     <104 IRQ_TYPE_EDGE_RISING>;
-		mute-gpio = <&tlmm 104 0>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&ep_reset_n_active &ep_mute_active &ep_int_active>;
 	};
@@ -80,9 +75,6 @@
 		qcom,ep92-name = "ep92.3-0064";
 		qcom,ep92-busnum  = <3>;
 		qcom,ep92-reg  = <0x64>;
-
-		qcom,clk-src-name-integ = "LPAPLL0";
-		qcom,clk-src-name-fract = "LPAPLL2";
 
 		asoc-platform = <&pcm0>, <&pcm1>, <&pcm2>, <&voip>, <&voice>,
 				<&loopback>, <&compress>, <&hostless>,
@@ -117,7 +109,6 @@
 			<&dai_tert_tdm_rx_0>, <&dai_tert_tdm_tx_0>,
 			<&dai_quat_tdm_rx_0>, <&dai_quat_tdm_tx_0>,
 			<&dai_quin_tdm_rx_0>, <&dai_quin_tdm_tx_0>,
-			<&dai_sen_tdm_rx_0>, <&dai_sen_tdm_tx_0>,
 			<&wsa_cdc_dma_0_rx>, <&wsa_cdc_dma_0_tx>,
 			<&wsa_cdc_dma_1_rx>, <&wsa_cdc_dma_1_tx>,
 			<&wsa_cdc_dma_2_tx>,
@@ -154,7 +145,6 @@
 			"msm-dai-q6-tdm.36896", "msm-dai-q6-tdm.36897",
 			"msm-dai-q6-tdm.36912", "msm-dai-q6-tdm.36913",
 			"msm-dai-q6-tdm.36928", "msm-dai-q6-tdm.36929",
-			"msm-dai-q6-tdm.36944", "msm-dai-q6-tdm.36945",
 			"msm-dai-cdc-dma-dev.45056",
 			"msm-dai-cdc-dma-dev.45057",
 			"msm-dai-cdc-dma-dev.45058",
